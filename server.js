@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8080", //Puerto de la API server
+  origin: "http://localhost:3306", //Puerto de la API server
   origin: "http://localhost:8081"  //Puerto de el cliente Front
 };
 
@@ -56,7 +56,7 @@ require("./app/routes/padrefamilia.routes")(app);
 app.use("/Images", express.static(".//Images"))
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3306;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
