@@ -4,8 +4,8 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:3306", //Puerto de la API server
-  origin: "https://apiwebservice-eb09.onrender.com"  //Puerto de el cliente Front
+  origin: "https://apiwebservice-eb09.onrender.com", //Puerto de la API server
+  origin: "https://studentscontrol.onrender.com"  //Puerto de el cliente Front
 };
 
 //  var corsOptions2 = {
