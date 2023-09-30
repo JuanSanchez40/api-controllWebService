@@ -4,10 +4,13 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "https://apiwebservice-eb09.onrender.com", //Puerto de la API server en Produccion
-  origin: "https://studentscontrol.onrender.com",  //Puerto de el cliente Front en Produccion
-  //origin: "http://localhost:8081", //Puerto del cliente en dev local
+    origin: "https://studentscontrol.onrender.com"  //Puerto de el cliente Front
 };
+
+// var corsOptions = {
+//   origin: "http://localhost:8081", //Puerto de la API server
+ 
+// };
 
 //  var corsOptions2 = {
 //    origin: "http://localhost:8081"
@@ -16,6 +19,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 // app.use(cors(corsOptions2));
 // parse requests of content-type - application/json
+
 app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
@@ -40,7 +44,7 @@ db.sequelize.sync()
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to backend webservice." });
 });
 
 // routes
@@ -57,10 +61,12 @@ require("./app/routes/padrefamilia.routes")(app);
 app.use("/Images", express.static(".//Images"))
 
 // set port, listen for requests
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+
 
 function initial() {
   Role.create({
