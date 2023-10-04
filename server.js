@@ -4,8 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-    origin: "https://studentscontrol.onrender.com",
-    origin:"http://localhost:8081"  //Puerto de el cliente Front
+    origin: "https://studentscontrol.onrender.com",  //Puerto de el cliente Front
 };
 
 // var corsOptions = {
@@ -13,11 +12,11 @@ var corsOptions = {
  
 // };
 
-//  var corsOptions2 = {
-//    origin: "http://localhost:8081"
-//  }
+  var corsOptions2 = {
+    origin: "http://localhost:8081"
+  }
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions, corsOptions2));
 // app.use(cors(corsOptions2));
 // parse requests of content-type - application/json
 
