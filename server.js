@@ -4,7 +4,8 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-    origin: "https://studentscontrol.onrender.com"  //Puerto de el cliente Front
+    origin: "https://studentscontrol.onrender.com",
+    "http://localhost:8081"  //Puerto de el cliente Front
 };
 
 // var corsOptions = {
