@@ -5,18 +5,15 @@ const app = express();
 
 var corsOptions = {
     origin: "https://studentscontrol.onrender.com",  //Puerto de el cliente Front
-};
+  };
 
-// var corsOptions = {
-//   origin: "http://localhost:8081", //Puerto de la API server
+  // var corsOptions2 = {
+  //   origin: "http://localhost:8081"
+  // }
+
  
-// };
 
-  var corsOptions2 = {
-    origin: "http://localhost:8081"
-  }
-
-app.use(cors(corsOptions, corsOptions2));
+app.use(cors({ origin: [ "https://studentscontrol.onrender.com", "http://localhost:8081"] }));
 // app.use(cors(corsOptions2));
 // parse requests of content-type - application/json
 
